@@ -125,8 +125,7 @@ em {
 ========================================================= */
 .timeline {
     position: relative;
-    /* Se reduce el padding-bottom: la línea ya no necesita espacio extra */
-    padding: clamp(3rem, 6vw, 6rem) 1.25rem 3rem;
+    padding: clamp(3rem, 6vw, 6rem) 1.25rem 5rem;
 }
 
 .timeline__shell {
@@ -171,12 +170,10 @@ em {
     gap: 0;
 }
 
-/* La línea se posiciona dentro de .timeline__list,
-   así bottom:0 coincide exactamente con el fin del último item */
 .timeline__track {
     position: absolute;
     left: 50%;
-    top: 0;
+    top: 12rem;
     bottom: 0;
     width: 4px;
     transform: translateX(-50%);
@@ -210,11 +207,6 @@ em {
     grid-template-columns: minmax(0, 1fr) var(--axis-size) minmax(0, 1fr);
     align-items: start;
     margin-bottom: var(--space-6);
-}
-
-/* El último evento no necesita margen inferior */
-.timeline-item:last-child {
-    margin-bottom: 0;
 }
 
 .timeline-item--left .timeline-item__content {
@@ -648,23 +640,19 @@ em {
 @media (max-width: 768px) {
     .timeline {
         padding-inline: 1rem;
-        padding-bottom: 5rem;
+        padding-bottom: 7rem;
     }
 
     .timeline__track {
         left: 1.1rem;
         transform: none;
-        top: 0;
+        top: 10rem;
     }
 
     .timeline-item {
         grid-template-columns: 2.2rem minmax(0, 1fr);
         gap: 0 1rem;
         margin-bottom: 1.5rem;
-    }
-
-    .timeline-item:last-child {
-        margin-bottom: 0;
     }
 
     .timeline-item--left .timeline-item__content,
