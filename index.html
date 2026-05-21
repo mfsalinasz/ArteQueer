@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html class="dark scroll-smooth" lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta name="description"
+        content="QUEER ART: plataforma web para visibilizar arte queer desde capitulos, cronicas y una galeria visual." />
+    <title>QUEER ART - Plataforma de arte queer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link href="styles.css" rel="stylesheet" />
+    <script defer src="app.js"></script>
+</head>
+
+<body>
+    <a class="skip-link" href="#app">Saltar al contenido</a>
+
+    <header class="topbar" data-topbar>
+        <nav class="topbar__inner" aria-label="Navegacion principal">
+            <a class="brand" href="/capitulos" data-route>QUEER ART</a>
+
+            <button class="menu-button" type="button" aria-label="Abrir menu" aria-expanded="false"
+                data-menu-button>
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <div class="nav-links" data-nav-links>
+                <a href="/capitulos" data-route>Capitulos</a>
+                <a href="/cronicas" data-route>Cronicas</a>
+                <a href="/gallery" data-route>Gallery</a>
+            </div>
+        </nav>
+    </header>
+
+    <main id="app" class="app-shell" tabindex="-1"></main>
+
+    <footer class="site-footer">
+        <div class="site-footer__glow" aria-hidden="true"></div>
+        <div class="site-footer__inner">
+            <p class="site-footer__brand">QUEER ART</p>
+            <nav class="site-footer__links" aria-label="Navegacion secundaria">
+                <a href="/capitulos" data-route>Capitulos</a>
+                <a href="/cronicas" data-route>Cronicas</a>
+                <a href="/gallery" data-route>Gallery</a>
+            </nav>
+            <p class="site-footer__meta">2026 / ARCHIVO VISUAL QUEER</p>
+        </div>
+    </footer>
+</body>
+
+</html>
