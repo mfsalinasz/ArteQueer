@@ -101,7 +101,6 @@ em {
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
-    /* Oscurece la imagen para mantener legibilidad */
     transition:
         opacity 700ms cubic-bezier(0.22, 1, 0.36, 1);
     will-change: opacity;
@@ -116,8 +115,7 @@ em {
     pointer-events: none;
 }
 
-/* Cuando JS aplica la clase .is-transitioning hacemos
-   cross-fade bajando la opacidad a la mitad brevemente */
+/* Cross-fade al cambiar de escena */
 .scene-bg.is-transitioning {
     opacity: 0.25;
 }
@@ -559,6 +557,7 @@ em {
         box-shadow var(--transition-fast);
 }
 
+/* Tooltip del label — siempre oculto por defecto */
 .timeline__nav-button::after {
     content: attr(data-label);
     position: absolute;
@@ -579,17 +578,24 @@ em {
         transform var(--transition-fast);
 }
 
-.timeline__nav-button:hover,
-.timeline__nav-button:focus-visible,
+/* Estilo visual del botón activo: solo cambia tamaño y color,
+   NO muestra el tooltip */
 .timeline__nav-button.is-active {
     transform: scale(1.22);
     background: var(--color-secondary);
     box-shadow: 0 0 0 6px rgba(34, 211, 238, 0.15);
 }
 
+/* Estilo visual en hover/focus: cambia tamaño, color Y muestra tooltip */
+.timeline__nav-button:hover,
+.timeline__nav-button:focus-visible {
+    transform: scale(1.22);
+    background: var(--color-secondary);
+    box-shadow: 0 0 0 6px rgba(34, 211, 238, 0.15);
+}
+
 .timeline__nav-button:hover::after,
-.timeline__nav-button:focus-visible::after,
-.timeline__nav-button.is-active::after {
+.timeline__nav-button:focus-visible::after {
     opacity: 1;
     transform: translate(-0.2rem, -50%);
 }
@@ -701,8 +707,7 @@ em {
     }
 
     .timeline__nav-button:hover::after,
-    .timeline__nav-button:focus-visible::after,
-    .timeline__nav-button.is-active::after {
+    .timeline__nav-button:focus-visible::after {
         transform: translateX(50%);
     }
 }
