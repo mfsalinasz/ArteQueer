@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Línea de tiempo dinámica — Arte queer</title>
+    <meta name="description"
+        content="Línea de tiempo interactiva sobre hitos del arte queer, el activismo LGBT y sus antecedentes." />
+    <link rel="stylesheet" href="timeline.css" />
+    <script defer src="timeline.js"></script>
+</head>
+
+<body>
+    <main class="page">
+        <!-- =========================
+         Timeline
+    ========================== -->
+        <section class="timeline" id="timeline" aria-labelledby="timeline-title">
+            <div class="timeline__shell">
+                <header class="timeline__header">
+                    <p class="timeline__eyebrow">Historia visual y disidencia</p>
+                    <h1 class="timeline__title" id="timeline-title">
+                        Del arte feminista al arte queer contemporáneo
+                    </h1>
+                    <p class="timeline__lead">
+                        Un recorrido cronológico por obras, movimientos y rupturas que abrieron
+                        nuevas formas de representar cuerpo, identidad, deseo y resistencia.
+                    </p>
+                </header>
+
+                <!-- Navegación fija / progreso -->
+                <aside class="timeline__nav" aria-label="Navegación de hitos">
+                    <div class="timeline__nav-progress" aria-hidden="true">
+                        <span class="timeline__nav-progress-fill"></span>
+                    </div>
+
+                    <ol class="timeline__nav-list" id="timeline-nav-list">
+                        <!-- Se genera automáticamente desde JS -->
+                    </ol>
+                </aside>
+
+                <!-- Eje central -->
+                <div class="timeline__track" aria-hidden="true">
+                    <span class="timeline__track-line"></span>
+                    <span class="timeline__track-progress" id="timeline-track-progress"></span>
+                </div>
+
+                <!-- Lista de eventos -->
+                <div class="timeline__list" id="timeline-list">
+                    <!-- Evento 01 -->
+                    <article class="timeline-item timeline-item--left" id="evento-cut-piece"
+                        aria-labelledby="evento-cut-piece-title">
+                        <div class="timeline-item__content">
+                            <div class="timeline-card" tabindex="0">
+                                <span class="timeline-card__index">01</span>
+
+                                <div class="timeline-card__meta">
+                                    <time class="timeline-card__date" datetime="1964">1964</time>
+                                    <span class="timeline-card__tag">Performance</span>
+                                </div>
+
+                                <h2 class="timeline-card__title" id="evento-cut-piece-title">
+                                    Yoko Ono presenta <em>Cut Piece</em>
+                                </h2>
+
+                                <p class="timeline-card__summary">
+                                    La audiencia corta su ropa durante la acción, en una crítica al
+                                    papel pasivo impuesto a las mujeres y al uso del cuerpo femenino
+                                    como objeto de consumo.
+                                </p>
+
+                                <figure class="timeline-card__media" aria-hidden="true">
+                                    <div class="timeline-card__media-surface timeline-card__media-surface--ono"></div>
+                                </figure>
+
+                                <button class="timeline-card__toggle" type="button" aria-expanded="false"
+                                    aria-controls="evento-cut-piece-details" data-open-label="Ver contexto"
+                                    data-close-label="Ocultar contexto">
+                                    Ver contexto
+                                </button>
+
+                                <div class="timeline-card__details" id="evento-cut-piece-details" role="region"
+                                    aria-labelledby="evento-cut-piece-title" hidden>
+                                    <div class="timeline-card__details-inner">
+                                        <p>
+                                            Esta obra marca un antecedente clave para las prácticas
+                                            performáticas que politizan el cuerpo y abren paso a lenguajes
+                                            más confrontativos dentro del arte de género.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item__axis" aria-hidden="true">
+                            <span class="timeline-item__node"></span>
+                        </div>
+                    </article>
+
+                    <!-- Evento 02 -->
+                    <article class="timeline-item timeline-item--right" id="evento-tap-touch"
+                        aria-labelledby="evento-tap-touch-title">
+                        <div class="timeline-item__content">
+                            <div class="timeline-card" tabindex="0">
+                                <span class="timeline-card__index">02</span>
+
+                                <div class="timeline-card__meta">
+                                    <time class="timeline-card__date" datetime="1968">1968</time>
+                                    <span class="timeline-card__tag">Cuerpo y cine</span>
+                                </div>
+
+                                <h2 class="timeline-card__title" id="evento-tap-touch-title">
+                                    VALIE EXPORT activa <em>Tap and Touch Cinema</em>
+                                </h2>
+
+                                <p class="timeline-card__summary">
+                                    La artista invita al público a tocar su torso dentro de una caja,
+                                    cuestionando la sexualización de las mujeres en el cine y en la
+                                    cultura visual.
+                                </p>
+
+                                <button class="timeline-card__toggle" type="button" aria-expanded="false"
+                                    aria-controls="evento-tap-touch-details" data-open-label="Ver contexto"
+                                    data-close-label="Ocultar contexto">
+                                    Ver contexto
+                                </button>
+
+                                <div class="timeline-card__details" id="evento-tap-touch-details" role="region"
+                                    aria-labelledby="evento-tap-touch-title" hidden>
+                                    <div class="timeline-card__details-inner">
+                                        <p>
+                                            Su gesto desplaza la mirada tradicional del espectador y
+                                            convierte la interacción física en una crítica directa a la
+                                            explotación sexista de la imagen femenina.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item__axis" aria-hidden="true">
+                            <span class="timeline-item__node"></span>
+                        </div>
+                    </article>
+
+                    <!-- Evento 03 -->
+                    <article class="timeline-item timeline-item--left" id="evento-stonewall"
+                        aria-labelledby="evento-stonewall-title">
+                        <div class="timeline-item__content">
+                            <div class="timeline-card" tabindex="0">
+                                <span class="timeline-card__index">03</span>
+
+                                <div class="timeline-card__meta">
+                                    <time class="timeline-card__date" datetime="1969-06">Junio de 1969</time>
+                                    <span class="timeline-card__tag">Activismo LGBT</span>
+                                </div>
+
+                                <h2 class="timeline-card__title" id="evento-stonewall-title">
+                                    Los disturbios de Stonewall cambian la militancia LGBT
+                                </h2>
+
+                                <p class="timeline-card__summary">
+                                    La revuelta en Nueva York marca un punto de inflexión frente a la
+                                    represión policial y da lugar al Gay Liberation Front.
+                                </p>
+
+                                <figure class="timeline-card__media" aria-hidden="true">
+                                    <div class="timeline-card__media-surface timeline-card__media-surface--stonewall">
+                                    </div>
+                                </figure>
+
+                                <button class="timeline-card__toggle" type="button" aria-expanded="false"
+                                    aria-controls="evento-stonewall-details" data-open-label="Ver contexto"
+                                    data-close-label="Ocultar contexto">
+                                    Ver contexto
+                                </button>
+
+                                <div class="timeline-card__details" id="evento-stonewall-details" role="region"
+                                    aria-labelledby="evento-stonewall-title" hidden>
+                                    <div class="timeline-card__details-inner">
+                                        <p>
+                                            Desde entonces, junio quedó asociado a las marchas del orgullo
+                                            y a una visibilidad política que también impactó las artes y
+                                            las representaciones de la disidencia sexual.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item__axis" aria-hidden="true">
+                            <span class="timeline-item__node"></span>
+                        </div>
+                    </article>
+
+                    <!-- Evento 04 -->
+                    <article class="timeline-item timeline-item--right" id="evento-despatologizacion"
+                        aria-labelledby="evento-despatologizacion-title">
+                        <div class="timeline-item__content">
+                            <div class="timeline-card" tabindex="0">
+                                <span class="timeline-card__index">04</span>
+
+                                <div class="timeline-card__meta">
+                                    <time class="timeline-card__date" datetime="1973">1973</time>
+                                    <span class="timeline-card__tag">Derechos y salud</span>
+                                </div>
+
+                                <h2 class="timeline-card__title" id="evento-despatologizacion-title">
+                                    La homosexualidad deja de ser considerada patología psiquiátrica
+                                </h2>
+
+                                <p class="timeline-card__summary">
+                                    La despatologización abre un nuevo marco social y cultural para la
+                                    expresión pública de identidades y deseos antes perseguidos.
+                                </p>
+
+                                <button class="timeline-card__toggle" type="button" aria-expanded="false"
+                                    aria-controls="evento-despatologizacion-details" data-open-label="Ver contexto"
+                                    data-close-label="Ocultar contexto">
+                                    Ver contexto
+                                </button>
+
+                                <div class="timeline-card__details" id="evento-despatologizacion-details" role="region"
+                                    aria-labelledby="evento-despatologizacion-title" hidden>
+                                    <div class="timeline-card__details-inner">
+                                        <p>
+                                            Ese cambio debilitó uno de los prejuicios más fuertes del siglo
+                                            XX y favoreció una presencia artística menos clandestina de la
+                                            homosexualidad.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item__axis" aria-hidden="true">
+                            <span class="timeline-item__node"></span>
+                        </div>
+                    </article>
+
+                    <!-- Evento 05 -->
+                    <article class="timeline-item timeline-item--left" id="evento-interior-scroll"
+                        aria-labelledby="evento-interior-scroll-title">
+                        <div class="timeline-item__content">
+                            <div class="timeline-card" tabindex="0">
+                                <span class="timeline-card__index">05</span>
+
+                                <div class="timeline-card__meta">
+                                    <time class="timeline-card__date" datetime="1975">1975</time>
+                                    <span class="timeline-card__tag">Arte feminista</span>
+                                </div>
+
+                                <h2 class="timeline-card__title" id="evento-interior-scroll-title">
+                                    Carolee Schneemann realiza <em>Interior Scroll</em>
+                                </h2>
+
+                                <p class="timeline-card__summary">
+                                    La obra confronta el sexismo en el arte y propone el cuerpo
+                                    femenino como espacio de creación, no como simple objeto de deseo.
+                                </p>
+
+                                <figure class="timeline-card__media" aria-hidden="true">
+                                    <div class="timeline-card__media-surface timeline-card__media-surface--scroll">
+                                    </div>
+                                </figure>
+
+                                <button class="timeline-card__toggle" type="button" aria-expanded="false"
+                                    aria-controls="evento-interior-scroll-details" data-open-label="Ver contexto"
+                                    data-close-label="Ocultar contexto">
+                                    Ver contexto
+                                </button>
+
+                                <div class="timeline-card__details" id="evento-interior-scroll-details" role="region"
+                                    aria-labelledby="evento-interior-scroll-title" hidden>
+                                    <div class="timeline-card__details-inner">
+                                        <p>
+                                            Este tipo de arte político de los setenta funciona como semilla
+                                            para desarrollos posteriores del arte gay y, más adelante, del
+                                            arte queer.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item__axis" aria-hidden="true">
+                            <span class="timeline-item__node"></span>
+                        </div>
+                    </article>
+
+                    <!-- Evento 06 -->
+                    <article class="timeline-item timeline-item--right" id="evento-history-of-sex"
+                        aria-labelledby="evento-history-of-sex-title">
+                        <div class="timeline-item__content">
+                            <div class="timeline-card" tabindex="0">
+                                <span class="timeline-card__index">06</span>
+
+                                <div class="timeline-card__meta">
+                                    <time class="timeline-card__date" datetime="1995">1995–1996</time>
+                                    <span class="timeline-card__tag">Teoría queer</span>
+                                </div>
+
+                                <h2 class="timeline-card__title" id="evento-history-of-sex-title">
+                                    Andrés Serrano expone <em>A History of Sex</em>
+                                </h2>
+
+                                <p class="timeline-card__summary">
+                                    La serie muestra prácticas e identidades fuera de la convención
+                                    heteronormativa, ampliando quién puede ser visto como sujeto sexual.
+                                </p>
+
+                                <button class="timeline-card__toggle" type="button" aria-expanded="false"
+                                    aria-controls="evento-history-of-sex-details" data-open-label="Ver contexto"
+                                    data-close-label="Ocultar contexto">
+                                    Ver contexto
+                                </button>
+
+                                <div class="timeline-card__details" id="evento-history-of-sex-details" role="region"
+                                    aria-labelledby="evento-history-of-sex-title" hidden>
+                                    <div class="timeline-card__details-inner">
+                                        <p>
+                                            Dialoga con el giro queer que cuestiona las categorías binarias
+                                            de género y sexualidad, así como la idea de una única
+                                            normalidad corporal y afectiva.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item__axis" aria-hidden="true">
+                            <span class="timeline-item__node"></span>
+                        </div>
+                    </article>
+
+                    <!-- Evento 07 -->
+                    <article class="timeline-item timeline-item--left" id="evento-loteria-gay"
+                        aria-labelledby="evento-loteria-gay-title">
+                        <div class="timeline-item__content">
+                            <div class="timeline-card" tabindex="0">
+                                <span class="timeline-card__index">07</span>
+
+                                <div class="timeline-card__meta">
+                                    <time class="timeline-card__date" datetime="2016">2016</time>
+                                    <span class="timeline-card__tag">México</span>
+                                </div>
+
+                                <h2 class="timeline-card__title" id="evento-loteria-gay-title">
+                                    Félix d’Eon resignifica la <em>Lotería gay mexicana</em>
+                                </h2>
+
+                                <p class="timeline-card__summary">
+                                    El imaginario popular mexicano se reinterpreta con humor, orgullo y
+                                    crítica visual para afirmar la diversidad sexual como parte de la cultura.
+                                </p>
+
+                                <figure class="timeline-card__media" aria-hidden="true">
+                                    <div class="timeline-card__media-surface timeline-card__media-surface--loteria">
+                                    </div>
+                                </figure>
+
+                                <button class="timeline-card__toggle" type="button" aria-expanded="false"
+                                    aria-controls="evento-loteria-gay-details" data-open-label="Ver contexto"
+                                    data-close-label="Ocultar contexto">
+                                    Ver contexto
+                                </button>
+
+                                <div class="timeline-card__details" id="evento-loteria-gay-details" role="region"
+                                    aria-labelledby="evento-loteria-gay-title" hidden>
+                                    <div class="timeline-card__details-inner">
+                                        <p>
+                                            Es un buen cierre contemporáneo para la línea de tiempo porque
+                                            conecta historia del arte, identidad queer y referentes culturales
+                                            locales en una pieza fácilmente reconocible.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item__axis" aria-hidden="true">
+                            <span class="timeline-item__node"></span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
