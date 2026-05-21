@@ -12,6 +12,9 @@
 </head>
 
 <body>
+    <!-- Fondo dinámico de escena (se actualiza con JS al cambiar de evento activo) -->
+    <div class="scene-bg" id="sceneBg" aria-hidden="true"></div>
+
     <main class="page">
         <!-- =========================
          Timeline
@@ -47,10 +50,14 @@
                 </div>
 
                 <!-- Lista de eventos -->
+                <!-- data-bg: URL de imagen personalizada por evento (ej: url('fotos/cut-piece.jpg')) -->
+                <!-- Mientras no haya foto, se usa el gradiente de data-bg-fallback             -->
                 <div class="timeline__list" id="timeline-list">
                     <!-- Evento 01 -->
                     <article class="timeline-item timeline-item--left" id="evento-cut-piece"
-                        aria-labelledby="evento-cut-piece-title">
+                        aria-labelledby="evento-cut-piece-title"
+                        data-bg=""
+                        data-bg-fallback="linear-gradient(135deg, #2a1430 0%, #111827 100%)">
                         <div class="timeline-item__content">
                             <div class="timeline-card" tabindex="0">
                                 <span class="timeline-card__index">01</span>
@@ -100,7 +107,9 @@
 
                     <!-- Evento 02 -->
                     <article class="timeline-item timeline-item--right" id="evento-tap-touch"
-                        aria-labelledby="evento-tap-touch-title">
+                        aria-labelledby="evento-tap-touch-title"
+                        data-bg=""
+                        data-bg-fallback="linear-gradient(135deg, #131c2c 0%, #24113d 100%)">
                         <div class="timeline-item__content">
                             <div class="timeline-card" tabindex="0">
                                 <span class="timeline-card__index">02</span>
@@ -146,7 +155,9 @@
 
                     <!-- Evento 03 -->
                     <article class="timeline-item timeline-item--left" id="evento-stonewall"
-                        aria-labelledby="evento-stonewall-title">
+                        aria-labelledby="evento-stonewall-title"
+                        data-bg=""
+                        data-bg-fallback="linear-gradient(135deg, #0d1f3c 0%, #1a0a2e 100%)">
                         <div class="timeline-item__content">
                             <div class="timeline-card" tabindex="0">
                                 <span class="timeline-card__index">03</span>
@@ -196,7 +207,9 @@
 
                     <!-- Evento 04 -->
                     <article class="timeline-item timeline-item--right" id="evento-despatologizacion"
-                        aria-labelledby="evento-despatologizacion-title">
+                        aria-labelledby="evento-despatologizacion-title"
+                        data-bg=""
+                        data-bg-fallback="linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%)">
                         <div class="timeline-item__content">
                             <div class="timeline-card" tabindex="0">
                                 <span class="timeline-card__index">04</span>
@@ -241,7 +254,9 @@
 
                     <!-- Evento 05 -->
                     <article class="timeline-item timeline-item--left" id="evento-interior-scroll"
-                        aria-labelledby="evento-interior-scroll-title">
+                        aria-labelledby="evento-interior-scroll-title"
+                        data-bg=""
+                        data-bg-fallback="linear-gradient(135deg, #35143d 0%, #161a2f 100%)">
                         <div class="timeline-item__content">
                             <div class="timeline-card" tabindex="0">
                                 <span class="timeline-card__index">05</span>
@@ -291,7 +306,9 @@
 
                     <!-- Evento 06 -->
                     <article class="timeline-item timeline-item--right" id="evento-history-of-sex"
-                        aria-labelledby="evento-history-of-sex-title">
+                        aria-labelledby="evento-history-of-sex-title"
+                        data-bg=""
+                        data-bg-fallback="linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)">
                         <div class="timeline-item__content">
                             <div class="timeline-card" tabindex="0">
                                 <span class="timeline-card__index">06</span>
@@ -336,7 +353,9 @@
 
                     <!-- Evento 07 -->
                     <article class="timeline-item timeline-item--left" id="evento-loteria-gay"
-                        aria-labelledby="evento-loteria-gay-title">
+                        aria-labelledby="evento-loteria-gay-title"
+                        data-bg=""
+                        data-bg-fallback="linear-gradient(135deg, #173629 0%, #13213b 100%)">
                         <div class="timeline-item__content">
                             <div class="timeline-card" tabindex="0">
                                 <span class="timeline-card__index">07</span>
@@ -347,7 +366,7 @@
                                 </div>
 
                                 <h2 class="timeline-card__title" id="evento-loteria-gay-title">
-                                    Félix d’Eon resignifica la <em>Lotería gay mexicana</em>
+                                    Félix d'Eon resignifica la <em>Lotería gay mexicana</em>
                                 </h2>
 
                                 <p class="timeline-card__summary">

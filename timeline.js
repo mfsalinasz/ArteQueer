@@ -13,10 +13,12 @@ class DynamicTimeline {
             this.root.querySelector(".timeline__track-progress"),
             this.root.querySelector(".timeline__nav-progress-fill")
         ];
+        this.sceneBg = document.getElementById("sceneBg");
         this.reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
         this.currentMode = "";
         this.observer = null;
         this.activeId = null;
+        this._sceneBgTimer = null;
 
         this.onScroll = this.rafThrottle(() => {
             this.updateScrollProgress();
@@ -268,6 +270,32 @@ class DynamicTimeline {
         });
     }
 
+    /* ---------------------------------------------------------
+       updateSceneBg
+       Lee data-bg (URL de foto) o data-bg-fallback (gradiente)
+       del item activo y hace un cross-fade suave al fondo.
+    --------------------------------------------------------- */
+    updateSceneBg(activeItem) {
+        if (!this.sceneBg || !activeItem) return;
+
+        const photo    = activeItem.dataset.bg?.trim();
+        const fallback = activeItem.dataset.bgFallback?.trim() ||
+                         "linear-gradient(135deg, #0a0b14, #090b13)";
+        const bg = photo ? `${photo}, ${fallback}` : fallback;
+
+        if (this.sceneBg.dataset.current === bg) return;
+        this.sceneBg.dataset.current = bg;
+
+        // Inicia cross-fade: baja opacidad → cambia fondo → sube opacidad
+        this.sceneBg.classList.add("is-transitioning");
+
+        clearTimeout(this._sceneBgTimer);
+        this._sceneBgTimer = setTimeout(() => {
+            this.sceneBg.style.background = bg;
+            this.sceneBg.classList.remove("is-transitioning");
+        }, 200); // 200 ms = mitad de la transición de opacidad (700 ms / 2 aprox)
+    }
+
     updateActiveNav() {
         if (!this.navButtons?.length) return;
 
@@ -292,6 +320,14 @@ class DynamicTimeline {
         if (!currentItem || currentItem.id === this.activeId) return;
 
         this.activeId = currentItem.id;
+
+        // Actualizar fondo de escena
+        this.updateSceneBg(currentItem);
+
+        // Actualizar clase visual en los items (nodo + borde de carta)
+        this.items.forEach((item) => {
+            item.classList.toggle("is-scene-active", item === currentItem);
+        });
 
         this.navButtons.forEach((button) => {
             const isActive = button.dataset.target === this.activeId;
